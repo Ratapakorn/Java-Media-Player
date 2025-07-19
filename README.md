@@ -35,7 +35,7 @@ public abstract class AudioFile {
 }
 ```
 
-2️⃣ Creating the SampledFile, WAVFile, and TaggedFile Classes
+### 2️⃣ Creating the SampledFile, WAVFile, and TaggedFile Classes
 These classes inherit from AudioFile and implement specific behaviors:
 
 SampledFile: A generic audio file representation.
@@ -64,7 +64,7 @@ public class WAVFile extends SampledFile {
 }
 ```
 
-3️⃣ AudioFile Factory & Playlist Class
+### 3️⃣ AudioFile Factory & Playlist Class
 AudioFileFactory: Determines the appropriate subclass of AudioFile based on the file extension or content.
 
 Example:
@@ -100,7 +100,7 @@ public class Playlist {
     }
 }
 
-4️⃣ Iterator for Looping Through Songs
+### 4️⃣ Iterator for Looping Through Songs
 Implements the Iterator pattern for traversing through the playlist.
 
 Example:
@@ -126,7 +126,7 @@ public class PlaylistIterator implements Iterator<AudioFile> {
 }
 ```
 
-5️⃣ Building the User Interface (Player.java)
+### 5️⃣ Building the User Interface (Player.java)
 The Player class sets up the GUI using JavaFX. It includes:
 
 File chooser for importing audio files
@@ -152,14 +152,14 @@ public class Player extends Application {
 }
 ```
 
-🧪 Requirements
+### 🧪 Requirements
 Java 11 or higher
 
 JavaFX SDK
 
 An IDE such as IntelliJ IDEA, Eclipse, or VS Code with Java support
 
-📦 How to Run
+### 📦 How to Run
 Clone the repository:
 ```
 git clone https://github.com/yourusername/javafx-media-player.git
