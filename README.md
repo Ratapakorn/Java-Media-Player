@@ -22,6 +22,7 @@ The development process is split into **five main parts**:
 
 This is the base abstract class that defines shared properties and methods for all types of audio files. It includes metadata such as file path and abstract methods for playing the file and retrieving information.
 
+```java
 public abstract class AudioFile {
     protected String filepath;
 
@@ -32,6 +33,7 @@ public abstract class AudioFile {
     public abstract void play();
     public abstract String getInfo();
 }
+```
 
 2️⃣ Creating the SampledFile, WAVFile, and TaggedFile Classes
 These classes inherit from AudioFile and implement specific behaviors:
@@ -44,6 +46,7 @@ TaggedFile: Supports audio files with metadata like title, artist, and album.
 
 Example:
 
+```java
 public class WAVFile extends SampledFile {
     public WAVFile(String filepath) {
         super(filepath);
@@ -59,12 +62,14 @@ public class WAVFile extends SampledFile {
         return "WAV File: " + filepath;
     }
 }
+```
 
 3️⃣ AudioFile Factory & Playlist Class
 AudioFileFactory: Determines the appropriate subclass of AudioFile based on the file extension or content.
 
 Example:
 
+```java
 public class AudioFileFactory {
     public static AudioFile createAudioFile(File file) {
         String path = file.getAbsolutePath().toLowerCase();
@@ -77,6 +82,7 @@ public class AudioFileFactory {
         }
     }
 }
+```
 
 Playlist: Stores a list of AudioFile instances. Allows adding, removing, and accessing files.
 
@@ -99,6 +105,7 @@ Implements the Iterator pattern for traversing through the playlist.
 
 Example:
 
+```java
 public class PlaylistIterator implements Iterator<AudioFile> {
     private int currentIndex = 0;
     private List<AudioFile> files;
@@ -117,6 +124,7 @@ public class PlaylistIterator implements Iterator<AudioFile> {
         return files.get(currentIndex++);
     }
 }
+```
 
 5️⃣ Building the User Interface (Player.java)
 The Player class sets up the GUI using JavaFX. It includes:
@@ -131,6 +139,7 @@ Track metadata display
 
 Example:
 
+```java
 public class Player extends Application {
     @Override
     public void start(Stage primaryStage) {
@@ -141,6 +150,7 @@ public class Player extends Application {
         launch(args);
     }
 }
+```
 
 🧪 Requirements
 Java 11 or higher
