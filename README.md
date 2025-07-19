@@ -161,8 +161,10 @@ An IDE such as IntelliJ IDEA, Eclipse, or VS Code with Java support
 
 📦 How to Run
 Clone the repository:
+```
 git clone https://github.com/yourusername/javafx-media-player.git
 cd javafx-media-player
+```
 
 Open the project in your IDE and configure JavaFX settings (module path, VM arguments).
 
